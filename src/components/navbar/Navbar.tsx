@@ -7,9 +7,10 @@ const Navbar =() =>{
             <h1><Link to="/home">Farmacia </Link> <i className='bx bxs-band-aid'></i></h1>
             <div>
                 <ul className="flex gap-5">
-                    <li><Link to="/home">Home</Link></li>
-                    <li><Link to="/home">Produtos</Link></li>
-                    <li><Link to="/home">Contato</Link></li>
+                    <li><Link to="/home">Home <i className='bx bxs-home-smile' ></i></Link></li>
+                    <li><Link to="/home">Produtos <i className='bx bxs-shopping-bag' ></i></Link></li>
+                    <li><Link to="/" >Categorias <i className='bx bx-list-ul'></i></Link></li>
+                    <li><Link to="/home">Contato <i className='bx bxs-phone' ></i></Link></li>
                 </ul>
             </div>
         </div>

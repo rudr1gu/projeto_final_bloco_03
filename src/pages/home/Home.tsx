@@ -1,4 +1,25 @@
+import { useEffect, useState } from "react";
+import Produto from "../../models/Produto";
+import ProdutoServices from "../../services/ProdutoServices";
+
 const Home = () => {
+
+    const [produtos, setProdutos] = useState<Produto[]>([]);
+
+    const produtosServices = new ProdutoServices();
+
+    const buscarProdutos = async () => {
+        try{
+            await produtosServices.getAllProdutos(setProdutos);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        buscarProdutos();
+    }, []);
+
     return (
         <>
             <div className="w-screen flex justify-center">
@@ -9,11 +30,16 @@ const Home = () => {
                     </div>
 
                     <div className="max-w-7xl flex flex-col items-center">
-                        <img
-                            src="https://i.imgur.com/VpwApCU.png"
-                            alt="Imagem da Página Home"
-                            width="400px"
-                        />
+                        <h2>Produtos</h2>
+                        <p>Produtos em destaque...</p>
+                        <ul>
+                            {produtos.map((produto) => (
+                                <li key={produto.id}>
+                                    <p>{produto.nome}</p>
+                                    <p>{produto.preco}</p>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import Categoria from "../../../models/Categoria";
 import { RotatingLines } from "react-loader-spinner";
 
-const FormTema = () => {
+const FormCategoria = () => {
 
     const navigate = useNavigate();
     const categoriaServices = new CategoriaServices();
@@ -108,4 +108,4 @@ const FormTema = () => {
     );
 }
 
-export default FormTema;
+export default FormCategoria;

@@ -15,13 +15,13 @@ const CardCategorias = ({ categoria }: CardCategoriasProps) => {
             <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.descricao}</p>
 
             <div className="flex">
-                <Link to={`/editartema/${categoria.id}`}
+                <Link to={`/editarcategoria/${categoria.id}`}
                     className='w-full text-slate-100 bg-sky-400 hover:bg-sky-800 
                 flex items-center justify-center py-2'>
                     <button><i className='bx bxs-edit'></i> Editar</button>
                 </Link>
 
-                <Link to={`/deletartema/${categoria.id}`} className='text-slate-100 bg-red-400 hover:bg-red-700 w-full 
+                <Link to={`/deletarcategoria/${categoria.id}`} className='text-slate-100 bg-red-400 hover:bg-red-700 w-full 
             flex items-center justify-center'>
                     <button><i className='bx bx-trash' ></i> Deletar</button>
                 </Link>

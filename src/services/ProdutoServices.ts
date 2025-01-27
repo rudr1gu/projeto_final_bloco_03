@@ -11,6 +11,15 @@ class ProdutoServices {
         const response = await baseApi.post("/produtos", produto);
         setDados(response.data);
     }
+
+    updateProduto = async (produto: Produto, setDados: Function) => {
+        const response = await baseApi.put("/produtos", produto);
+        setDados(response.data);
+    }
+
+    deleteProduto = async (id: number) => {
+        await baseApi.delete(`/produtos/${id}`);
+    }
 }
 
 export default ProdutoServices;

@@ -10,7 +10,7 @@ const CardCategorias = ({ categoria }: CardCategoriasProps) => {
     return (
         <section className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
             <header className='py-2 px-6 bg-sky-800 text-white font-bold text-2xl'>
-                Categoria
+                {categoria.nome}
             </header>
             <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.descricao}</p>
 

@@ -9,7 +9,7 @@ const Navbar =() =>{
                 <ul className="flex gap-5">
                     <li><Link to="/home">Home <i className='bx bxs-home-smile' ></i></Link></li>
                     <li><Link to="/categorias" >Categorias <i className='bx bx-list-ul'></i></Link></li>
-                    <li><Link to="/cadastrarcategoria">Cadastrar Categoria</Link></li>
+                    <li><Link to="/cadastrarcategoria">Cadastrar Categoria <i className='bx bx-list-plus' ></i></Link></li>
                     <li><Link to="/contato">Contato <i className='bx bxs-phone' ></i></Link></li>
                 </ul>
             </div>

@@ -7,6 +7,11 @@ class ProdutoServices {
         setDados(response.data);
     }
 
+    getProdutoById = async (id: number, setDados: Function) => {
+        const response = await baseApi.get(`/produtos/${id}`);
+        setDados(response.data);
+    }
+
     createProduto = async (produto: Produto, setDados: Function) => {
         const response = await baseApi.post("/produtos", produto);
         setDados(response.data);

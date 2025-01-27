@@ -7,6 +7,11 @@ class CategoriaServices {
         setDados(response.data);
     }
 
+    getCategoriaById = async (id: number, setDados: Function) => {
+        const response = await baseApi.get(`/categorias/${id}`);
+        setDados(response.data);
+    }
+
     createCategoria = async (categoria: Categoria, setDados: Function) => {
         const response = await baseApi.post("/categorias", categoria);
         setDados(response.data);

@@ -1,49 +1,38 @@
-import { useEffect, useState } from "react";
-import Produto from "../../models/Produto";
-import ProdutoServices from "../../services/ProdutoServices";
+import { Link } from "react-router-dom";
+import ListaCategorias from "../../components/categorias/listarcategorias/ListarCategorias";
 
 const Home = () => {
 
-    const [produtos, setProdutos] = useState<Produto[]>([]);
-
-    const produtosServices = new ProdutoServices();
-
-    const buscarProdutos = async () => {
-        try{
-            await produtosServices.getAllProdutos(setProdutos);
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    useEffect(() => {
-        buscarProdutos();
-    }, []);
-
     return (
         <>
-            <div className="w-screen flex justify-center">
-                <div>
-                    <div className="max-w-7xl flex flex-col items-center">
-                        <h2>Seja Bem Vindo(a)!</h2>
-                        <p>a Farmacia blabla...</p>
-                    </div>
+        <section className="bg-sky-700 flex justify-center h-full" >
+            <div className='container grid grid-cols-2 text-white'>
+                <div className="flex flex-col gap-4 items-center justify-center py-4">
+                    <h2 className='text-5xl font-bold text-white'>
+                        Seja Bem Vindo(a) GenFarm!
+                    </h2>
+                    <p className='text-xl'>
+                        Encontre seu medicamento aqui!
+                    </p>
 
-                    <div className="max-w-7xl flex flex-col items-center">
-                        <h2>Produtos</h2>
-                        <p>Produtos em destaque...</p>
-                        <ul>
-                            {produtos.map((produto) => (
-                                <li key={produto.id}>
-                                    <p>{produto.nome}</p>
-                                    <p>{produto.preco}</p>
-                                </li>
-                            ))}
-                        </ul>
+                    <div className="flex justify-around gap-4">
+                        <div className="flex justify-around gap-4">
+                            <Link to="/categorias">Categorias</Link>
+                        </div>
                     </div>
                 </div>
+
+                <div className="flex justify-center ">
+                    <img
+                        src="https://cdn-icons-png.flaticon.com/512/10154/10154271.png"
+                        alt="Imagem Página Home"
+                        className='w-2/3'
+                    />
+                </div>
             </div>
-        </>
+        </section>
+        <ListaCategorias />
+    </>
     );
 
 }

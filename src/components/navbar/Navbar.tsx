@@ -8,9 +8,9 @@ const Navbar =() =>{
             <div>
                 <ul className="flex gap-5">
                     <li><Link to="/home">Home <i className='bx bxs-home-smile' ></i></Link></li>
-                    <li><Link to="/home">Produtos <i className='bx bxs-shopping-bag' ></i></Link></li>
-                    <li><Link to="/" >Categorias <i className='bx bx-list-ul'></i></Link></li>
-                    <li><Link to="/home">Contato <i className='bx bxs-phone' ></i></Link></li>
+                    <li><Link to="/categorias" >Categorias <i className='bx bx-list-ul'></i></Link></li>
+                    <li><Link to="/cadastrarcategoria">Cadastrar Categoria</Link></li>
+                    <li><Link to="/contato">Contato <i className='bx bxs-phone' ></i></Link></li>
                 </ul>
             </div>
         </div>
